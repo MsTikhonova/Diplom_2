@@ -4,11 +4,9 @@ import org.junit.Before;
 import org.junit.Test;
 import user.Token;
 import user.User;
-import user.UserCreds;
 import user.UserRequest;
 
 import static org.hamcrest.CoreMatchers.equalTo;
-import static org.junit.Assert.assertTrue;
 
 public class UserCreationTest {
     User user;
@@ -21,19 +19,11 @@ public class UserCreationTest {
         userRequest = new UserRequest();
     }
 
-//    @After
-//    public void teardown(){
-//        UserCreds creds = UserCreds.from(user);
-//        UserRequest.logIn(creds);
-//        Token tokenRequest = new Token(accessToken);
-//        UserRequest.delete(tokenRequest);
-//        CourierCredentials creds = CourierCredentials.from(courier);
-//        token = userRequest.logIn(creds)
-//                .statusCode(200)
-//                .extract()
-//                .path("id");
-//        userRequest.logOut(token);
-//    }
+    @After
+    public void teardown(){
+        Token tokenRequest = new Token(accessToken);
+        UserRequest.delete(tokenRequest);
+    }
     @Test
     @DisplayName("Успешное создание уникального пользователя")
     public void isUserCreated(){

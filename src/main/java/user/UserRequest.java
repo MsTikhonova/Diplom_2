@@ -114,7 +114,7 @@ public class UserRequest extends HeaderSpec implements Config {
                 .delete(USERINFO_ENDPOINT)
                 .then().log().all()
                 .assertThat()
-                .body("message",equalTo("Successful logout"));
+                .body("success",equalTo(true));
 
     }
 

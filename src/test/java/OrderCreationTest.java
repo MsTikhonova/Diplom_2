@@ -9,7 +9,6 @@ import user.UserRequest;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 
-//@RunWith(Parameterized.class)
 public class OrderCreationTest {
 
     User user;
